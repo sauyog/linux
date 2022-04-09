@@ -28,11 +28,9 @@
 
 -uname -a
 
--cp /boot/config-5.11.0-38-generic .config
+-cp /boot/config-5.13.0-39-generic .config
 
 -make prepare
-
--cd ..
 
 -make -j 4 modules
 
