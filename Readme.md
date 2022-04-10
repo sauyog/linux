@@ -12,7 +12,7 @@
 
 -Then, Built the latest linux source code succesfully. 
 
--Once the kernal source code was built  
+-Once the kernal source code was built, I added Primary proc based controls, Exit based controls, Secondary Procbased controls and Entrybased controls.   
 
 # Steps to install the dependencies:
 
