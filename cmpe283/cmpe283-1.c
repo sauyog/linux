@@ -40,6 +40,7 @@ struct capability_info pinbased[5] =
 	{ 6, "Activate VMX Preemption Timer" },
 	{ 7, "Process Posted Interrupts" }
 };
+
 struct capability_info primaryprocbased[21] =
 {
 	{ 2, "Interrupt-window exiting" },
@@ -63,6 +64,19 @@ struct capability_info primaryprocbased[21] =
 	{ 29, "MONITOR exiting" },
 	{ 30, "PAUSE exiting" },
 	{ 31, "Activate secondary controls" }
+};
+
+struct capability_info entrybased[9] =
+{
+	{ 2, "Load debug controls" },
+	{ 9, "IA-32e mode guest" },
+	{ 10, "Entry to SMM" },
+	{ 11, "Deactivate dualmonitor treatment" },
+	{ 13, "Load IA32_PERF_GLOBAL_CTRL" },
+	{ 14, "Load IA32_PAT" },
+	{ 15, "Load IA32_EFER" },
+	{ 16, "Load IA32_BNDCFGS" },
+	{ 17, "Conceal VM entries from Intel PT" }
 };
 struct capability_info exitbased[11] =
 {
@@ -104,18 +118,7 @@ struct capability_info secondaryprocbased[23] =
 	{ 22, "Mode-based execute control for EPT" },
 	{ 25, "Use TSC scaling" }
 };
-struct capability_info entrybased[9] =
-{
-	{ 2, "Load debug controls" },
-	{ 9, "IA-32e mode guest" },
-	{ 10, "Entry to SMM" },
-	{ 11, "Deactivate dualmonitor treatment" },
-	{ 13, "Load IA32_PERF_GLOBAL_CTRL" },
-	{ 14, "Load IA32_PAT" },
-	{ 15, "Load IA32_EFER" },
-	{ 16, "Load IA32_BNDCFGS" },
-	{ 17, "Conceal VM entries from Intel PT" }
-};
+
 
 /*
  * report_capability
@@ -149,7 +152,7 @@ report_capability(struct capability_info *cap, uint8_t len, uint32_t lo,
 	}
 }
 /*
- * check if secondary proc based controls are enabled
+ * checking if secondary proc based controls are enabled or not
  */
 bool isSecondaryProcEnabled(void)
 {
