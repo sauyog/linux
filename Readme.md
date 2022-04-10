@@ -47,6 +47,8 @@ git remote -v
 
 uname -a
 
+make clean
+
 cp /boot/config-5.13.0-39-generic .config
 
 make oldconfig
