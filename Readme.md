@@ -32,13 +32,15 @@
 
 -make prepare
 
--make -j 4 modules
+-make clean
 
--make -j 4
+-make -j 8 modules
+
+-make -j 8
 
 -sudo make INSTALL_MOD_STRIP=1 modules_install
 
--sude make install
+-sudo make install
 
 -reboot
 
