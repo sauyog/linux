@@ -4,11 +4,9 @@
 
 ## Assignment 1
 
--Installed VMware Workstation and created a VM with Ubuntu OS with 8 processors and 6GB RAM.
+-First I installed VMware Workstation and created a VM with Ubuntu OS with 8 processors and 6GB RAM. Then I mount the Ubuntu 20.04 iso image to the VM and installed the Ubuntu Operating system in the Workstation.
 
--Then mounted Ubuntu 20.04 iso image to the VM and then installed the Ubuntu Operating system in VMware Workstation.
-
--Enabled  the nested VM capability feature for the virtual Machine.
+-From settings I enabled the nested VM capability feature for the virtual Machine.
 
 -Then, forked the linux repsoitory from torvalds and then cloned the linux repository from my github account.
 
