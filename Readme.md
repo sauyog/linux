@@ -1,8 +1,8 @@
-## Name: Saurabh Vijaywargia
+# Name: Saurabh Vijaywargia
 
-## SJSU ID: 015224677
+# SJSU ID: 015224677
 
-## Assignment 1
+# Assignment 1
 
 -First I installed VMware Workstation and created a VM with Ubuntu OS with 8 processors and 6GB RAM. Then I mount the Ubuntu 20.04 iso image to the VM and installed the Ubuntu Operating system in the Workstation.
 
@@ -25,7 +25,7 @@ The output in dmesg is shown below.
 ![Screenshot 2022-04-09 225509](https://user-images.githubusercontent.com/23494069/162604545-b45fb71c-88bd-4757-aeb4-e9f5c74b4c8c.png)
 
 
-# Steps to install the dependencies:
+### Steps to install the dependencies:
 
 sudo apt install git
 
@@ -46,7 +46,7 @@ sudo apt install dwarves
 sudo apt install zstd
 
 
-# Execution Steps for linux source code build and installation:
+### Execution Steps for linux source code build and installation:
 
 git clone https://github.com/sauyog/linux.git 
 
@@ -80,7 +80,7 @@ sudo make install
 
 sudo reboot
 
-# Steps to build cmpe283-1.c source code, load and remove the module and see message logs:
+### Steps to build cmpe283-1.c source code, load and remove the module and see message logs:
 
 sudo make
 
@@ -90,9 +90,70 @@ cmpe283-1.c generates cmpe283-1.ko file. Now using the command "sudo insmod cmpe
 The logs can be seen using the command "dmesg"
 
 
-## Assignment 2
+# Assignment 2
 
-## Assignment 3
+The Changed files are cpuid.c and vmx.c
 
-## Assignment 4
+For CPUID leaf node %eax=0x4FFFFFFF and leaf node %eax=0x4FFFFFFE, I updated the code in vmx.c and cpuid.c to get the total number of exits and total time taken in handling the exits. Then I Installed the nested virtual machine inside the virtual machine and ran CPUID Package with 0x4FFFFFFF and 0x4FFFFFFE in eax.
+For 1st case the total number of exits is returned to eax. For Second case the total time taken value's higher 32 bits are returned to ebx and lower 32 bits are returned to ecx.
+
+### Commands are as follows:
+
+make modules
+
+make -j 4 modules
+
+sudo bash
+
+sudo make INSTALL_MOD_STRIP=1 modules_install
+  
+sudo rmmod kvm-intel
+
+sudo rmmod kvm
+
+modprobe kvm
+
+modprobe kvm-intel
+
+### Now for creating the virtual machine inside current virtual machine following commands are executed:
+  
+sudo apt update
+
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+
+sudo systemctl status libvirtd
+
+sudo systemctl enable --now libvirtd
+
+sudo apt install virt-manager
+
+sudo virt-manager
+
+installing ubuntu 20.4 iso image in the virtual manager
+
+![3](https://user-images.githubusercontent.com/23494069/163943854-f3edb0e2-a76a-4997-9dd1-0b2886efc65c.png)
+
+Adding the line 'deb http://mirrors.kernel.org/ubuntu bionic main universe' in sources.list file and running
+
+sudo apt-get -y update
+
+sudo apt-get install cpuid
+
+Will install cpuid package in inner ubuntu VM. Now executing the commands in inner VM
+
+cpuid -l 0X4fffffff -s exit_number
+cpuid -l 0X4ffffffe -s exit_number
+
+The output from inner vm is captured below.
+
+![1](https://user-images.githubusercontent.com/23494069/163943789-1dd9fdfb-061c-4976-96e4-0e87c50b62a1.png)
+
+In outer VM running dmesg command and capturing the output below.
+  
+![2](https://user-images.githubusercontent.com/23494069/163943807-41e2b705-1bf3-48fc-ab68-4bc6a2db19d2.png)
+
+
+# Assignment 3
+
+# Assignment 4
 
