@@ -133,7 +133,7 @@ installing ubuntu 20.4 iso image in the virtual manager
 
 ![3](https://user-images.githubusercontent.com/23494069/163943854-f3edb0e2-a76a-4997-9dd1-0b2886efc65c.png)
 
-Adding the line 'deb http://mirrors.kernel.org/ubuntu bionic main universe' in sources.list file and running
+Adding the line 'deb http://mirrors.kernel.org/ubuntu bionic main universe' in /etc/apt/sources.list file and running
 
 sudo apt-get -y update
 
