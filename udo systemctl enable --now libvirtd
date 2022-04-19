@@ -1,0 +1,26 @@
+[0;1;32m●[0m libvirtd.service - Virtualization daemon
+     Loaded: loaded (/lib/systemd/system/libvirtd.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Mon 2022-04-18 22:59:38 PDT; 57s ago
+TriggeredBy: [0;1;32m●[0m libvirtd.socket
+             [0;1;32m●[0m libvirtd-admin.socket
+             [0;1;32m●[0m libvirtd-ro.socket
+       Docs: man:libvirtd(8)
+             https://libvirt.org
+   Main PID: 92390 (libvirtd)
+      Tasks: 19 (limit: 32768)
+     Memory: 15.6M
+     CGroup: /system.slice/libvirtd.service
+             ├─92390 /usr/sbin/libvirtd
+             ├─92536 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+             └─92539 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+
+Apr 18 22:59:38 ubuntu systemd[1]: Started Virtualization daemon.
+Apr 18 22:59:39 ubuntu dnsmasq[92536]: started, version 2.80 cachesize 150
+Apr 18 22:59:39 ubuntu dnsmasq[92536]: compile time options: IPv6 GNU-getopt DBus i18n IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset auth nettlehash DNSSEC loop-detect inotify dumpfile
+Apr 18 22:59:39 ubuntu dnsmasq-dhcp[92536]: DHCP, IP range 192.168.122.2 -- 192.168.122.254, lease time 1h
+Apr 18 22:59:39 ubuntu dnsmasq-dhcp[92536]: DHCP, sockets bound exclusively to interface virbr0
+Apr 18 22:59:39 ubuntu dnsmasq[92536]: reading /etc/resolv.conf
+Apr 18 22:59:39 ubuntu dnsmasq[92536]: using nameserver 127.0.0.53#53
+Apr 18 22:59:39 ubuntu dnsmasq[92536]: read /etc/hosts - 7 addresses
+Apr 18 22:59:39 ubuntu dnsmasq[92536]: read /var/lib/libvirt/dnsmasq/default.addnhosts - 0 addresses
+Apr 18 22:59:39 ubuntu dnsmasq-dhcp[92536]: read /var/lib/libvirt/dnsmasq/default.hostsfile
