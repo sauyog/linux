@@ -2,6 +2,8 @@
 
 # SJSU ID: 015224677
 
+# code files I have placed in the folder cmpe283 for all assignments
+
 # Assignment 1
 
 -First I installed VMware Workstation and created a VM with Ubuntu OS with 8 processors and 6GB RAM. Then I mount the Ubuntu 20.04 iso image to the VM and installed the Ubuntu Operating system in the Workstation.
