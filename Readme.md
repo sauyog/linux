@@ -256,7 +256,7 @@ The least frequent exits are as follows:
 
 What did you learn from the count of exits? Was the count what you expected? If not, why not?
 
-When compared to stacked paging, the number of exits in shadow paging increases. Yes, the count was anticipated. Nested paging eliminates the overheads associated with shadow paging. The hypervisor does not need to intercept and reproduce the visitor's modification of the guest page table, unlike shadow paging.
+When compared to Nested paging, the number of exits in shadow paging increases. Yes, the count was anticipated. Nested paging eliminates the overheads associated with shadow paging. The hypervisor does not need to intercept and reproduce the visitor's modification of the guest page table, unlike shadow paging.
 
 What changed between the two runs (ept vs no-ept)?
 
