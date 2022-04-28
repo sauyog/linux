@@ -167,18 +167,22 @@ And also modified it to get the total number of exits for a given exit number.
 
 ● Ran CPUID Package for 0x4FFFFFFC and 0x4FFFFFFD with exit number in ecx.
 
+● Created a script to run the below command with variable exit numbers.
+
 
 
 ### Output:
-● Ran the below commands in the inner VM which is inside outer VM
-
-  cpuid -l 0X4ffffffc -s exit_number
+● Ran the below cpuid commands using scr.sh script in the inner VM which is inside outer VM
   
-  cpuid -l 0X4ffffffd -s exit_number
-  
-● Ran the command dmesg in the outer VM which gave the output.
+  bash scr.sh
 
-### Observations:
+    cpuid -l 0X4ffffffc -s exit_number
+  
+    cpuid -l 0X4ffffffd -s exit_number
+  
+● Ran the command 'dmesg' in the outer VM which gave the output. The images of output are placed in the file cmpe283/Assignment-3/Assignment_3.docx
+
+### Following Observations were made:
 
 3: Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
 
@@ -210,3 +214,26 @@ The least frequent exits are as follows:
 
 # Assignment 4
 
+●	Ran cpuid to get the number of exits for nested paging and shadow paging
+
+●	Booted the guest VM and, Recorded total exit count information
+
+●	Shutdown the inner VM.
+
+●	Remove the ‘kvm-intel’ module from current kernel
+
+●	Reload the kvm-intel module by giving ept=0 at the path insmod /lib/modules/5.15.0+/kernel/arch/x86/kvm/kvm-intel.ko ept=0
+
+●	Booted the VM again, making the note of exits
+
+
+What did you learn from the count of exits? Was the count what you expected? If not, why not?
+
+The exits count in shadow paging increases when compared to the nested paging. Yes, the count was expected. 
+The overheads associated with shadow paging are eliminated with nested paging. Unlike shadow paging, the hypervisor does not need to intercept and replicate the guest’s modification of the guest page table.
+
+What changed between the two runs (ept vs no-ept)?
+
+The changes between the two runs with ept and without ept are the exit counts. The exit count has been increased with no-ept due to the overhead associated with shadow paging.
+
+The output is placed at the path cmpe283/Assignment-4/Assignment_4.docx
