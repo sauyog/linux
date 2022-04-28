@@ -144,6 +144,7 @@ sudo apt-get install cpuid
 Will install cpuid package in inner ubuntu VM. Now executing the commands in inner VM
 
 cpuid -l 0X4fffffff -s exit_number
+
 cpuid -l 0X4ffffffe -s exit_number
 
 The output from inner vm is captured below.
