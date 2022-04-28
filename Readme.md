@@ -187,7 +187,7 @@ And also modified it to get the total number of exits for a given exit number.
 ![image](https://user-images.githubusercontent.com/23494069/165829770-950e2f6b-d6bf-44a9-beb9-4eb9b26ca9b0.png)
 
   
-● Ran the command 'dmesg' in the outer VM which gave the output. The images of output are placed in the file cmpe283/Assignment-3/Assignment_3.docx
+● Ran the command 'dmesg' in the outer VM which gave the output.
 
 ![image](https://user-images.githubusercontent.com/23494069/165829803-1e6446e9-3545-472b-855c-92f890cdb222.png)
 
@@ -207,6 +207,7 @@ After Boot the output is shown below
 
 ![image](https://user-images.githubusercontent.com/23494069/165830000-730efdf5-aec2-4d3f-bb2e-f3cf2517d89b.png)
 
+The images of output are placed in the file cmpe283/Assignment-3/Assignment_3.docx
 
 ### Following Observations were made:
 
@@ -248,21 +249,18 @@ The least frequent exits are as follows:
 
 ●	Remove the ‘kvm-intel’ module from current kernel
 
-●	Reload the kvm-intel module by giving ept=0 at the path insmod /lib/modules/5.15.0+/kernel/arch/x86/kvm/kvm-intel.ko ept=0
+●	Reload the kvm-intel module by giving ept=0 at the path insmod /lib/modules/5.13.0-39-generic/kernel/arch/x86/kvm/kvm-intel.ko ept=0
 
 ●	Booted the VM again, making the note of exits
 
 
 What did you learn from the count of exits? Was the count what you expected? If not, why not?
 
-The exits count in shadow paging increases when compared to the nested paging. Yes, the count was expected. 
-The overheads associated with shadow paging are eliminated with nested paging. Unlike shadow paging, the hypervisor does not need to intercept and replicate the guest’s modification of the guest page table.
+When compared to stacked paging, the number of exits in shadow paging increases. Yes, the count was anticipated. Nested paging eliminates the overheads associated with shadow paging. The hypervisor does not need to intercept and reproduce the visitor's modification of the guest page table, unlike shadow paging.
 
 What changed between the two runs (ept vs no-ept)?
 
-The changes between the two runs with ept and without ept are the exit counts. The exit count has been increased with no-ept due to the overhead associated with shadow paging.
-
-The output is placed at the path cmpe283/Assignment-4/Assignment_4.docx
+The exit counts differ between the two runs with ept and without ept. Due to the overhead associated with shadow paging, the exit count has been increased with no-ept.
 
 Output before boot is:
 
@@ -272,4 +270,4 @@ After Shadow paging the output is shown below:
 
 ![image](https://user-images.githubusercontent.com/23494069/165830124-0b368d88-c527-4f7c-8709-6500594fe978.png)
 
-
+The output is placed at the path cmpe283/Assignment-4/Assignment_4.docx
