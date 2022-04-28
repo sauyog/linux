@@ -157,5 +157,49 @@ In outer VM running dmesg command and capturing the output below.
 
 # Assignment 3
 
+● I worked on CPUID leaf node %eax=0x4FFFFFFC and %eax=0x4FFFFFFD
+
+● Modified the code in vmx.c to get the total time spent in processing specific exit number and get the number of exits for a given exit number in ecx.
+
+●	Modified the code in cpuid.c to to get the higher 32 and lower 32 bits bits of exit processing time in ebx and ecx respectively. 
+
+And also modified it to get the total number of exits for a given exit number.
+
+●	Modified the code in cpuid.c to to get the of exit processing time in ecx.
+
+● Ran CPUID Package with 0x4FFFFFFC and 0x4FFFFFFD with exit number in ecx.
+
+
+
+### Output:
+● I ran the below commands in the inner VM which is inside outer VM
+
+  cpuid -l 0X4ffffffc -s exit_number
+  
+  cpuid -l 0X4ffffffd -s exit_number
+  
+● I ran the command dmesg in the outer VM which gave the output.
+
+### Observations:
+
+3: Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
+
+The frequency of exits is increasing at a stable rate. From the screenshots I observed that VM boot for all the exits entails up to ~6800000.
+
+4. Of the exit types defined in the SDM, which are the most frequent? Least?
+
+Most Frequent Exits:
+●	Exit number 48 - EPT Violation
+●	Exit number 32 - WRMSR
+●	Exit number 1- External Interrupt
+●	Exit number 12- HLT
+●	Exit number 49- EPT misconfiguration
+●	Exit number 10- CPUID
+Least Frequent Exits :
+●	Exit number 54 - WBINVD or WBNOINVD
+●	Exit number 55 -  XSETBV
+●	Exit number 29 - MOV DR
+
+
 # Assignment 4
 
