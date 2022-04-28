@@ -187,17 +187,26 @@ The frequency of exits increases at a steady rate. From the screenshots It can b
 4. Of the exit types defined in the SDM, which are the most frequent? Least?
 
 The most frequent exits are as follows:
-●	Exit number 48 - EPT Violation
-●	Exit number 32 - WRMSR
-●	Exit number 1- External Interrupt
-●	Exit number 12- HLT
-●	Exit number 49- EPT misconfiguration
-●	Exit number 10- CPUID
-The least frequent exits are as follows:
-●	Exit number 54 - WBINVD or WBNOINVD
-●	Exit number 55 -  XSETBV
-●	Exit number 29 - MOV DR
 
+●	Exit number 48 - EPT Violation
+
+●	Exit number 32 - WRMSR
+
+●	Exit number 1- External Interrupt
+
+●	Exit number 12- HLT
+
+●	Exit number 49- EPT misconfiguration
+
+●	Exit number 10- CPUID
+
+The least frequent exits are as follows:
+
+●	Exit number 54 - WBINVD or WBNOINVD
+
+●	Exit number 55 -  XSETBV
+
+●	Exit number 29 - MOV DR
 
 # Assignment 4
 
