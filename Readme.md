@@ -180,8 +180,33 @@ And also modified it to get the total number of exits for a given exit number.
     cpuid -l 0X4ffffffc -s exit_number
   
     cpuid -l 0X4ffffffd -s exit_number
+
+
+![image](https://user-images.githubusercontent.com/23494069/165829750-0bdd84d3-4519-43bf-a233-dedcad9fa418.png)
+
+![image](https://user-images.githubusercontent.com/23494069/165829770-950e2f6b-d6bf-44a9-beb9-4eb9b26ca9b0.png)
+
   
 ● Ran the command 'dmesg' in the outer VM which gave the output. The images of output are placed in the file cmpe283/Assignment-3/Assignment_3.docx
+
+![image](https://user-images.githubusercontent.com/23494069/165829803-1e6446e9-3545-472b-855c-92f890cdb222.png)
+
+![image](https://user-images.githubusercontent.com/23494069/165829814-a480d958-5030-4538-b132-4ea6aa852d7a.png)
+
+![image](https://user-images.githubusercontent.com/23494069/165829830-fc5fb580-33b5-4131-a7d1-fb867f3d5c0a.png)
+
+![image](https://user-images.githubusercontent.com/23494069/165829838-5ccf3452-6aa8-4730-871c-3a9ac5d2da3d.png)
+
+After Boot the output is shown below
+
+![image](https://user-images.githubusercontent.com/23494069/165829941-959875ff-c66a-4c61-9c16-98af15321f84.png)
+
+![image](https://user-images.githubusercontent.com/23494069/165829950-56a9d619-94b9-4b55-84b5-42d6b68e1aa9.png)
+
+![image](https://user-images.githubusercontent.com/23494069/165829985-c2e24fe9-a7bd-42b4-8dc7-799a11d512a7.png)
+
+![image](https://user-images.githubusercontent.com/23494069/165830000-730efdf5-aec2-4d3f-bb2e-f3cf2517d89b.png)
+
 
 ### Following Observations were made:
 
@@ -238,3 +263,13 @@ What changed between the two runs (ept vs no-ept)?
 The changes between the two runs with ept and without ept are the exit counts. The exit count has been increased with no-ept due to the overhead associated with shadow paging.
 
 The output is placed at the path cmpe283/Assignment-4/Assignment_4.docx
+
+Output before boot is:
+
+![image](https://user-images.githubusercontent.com/23494069/165830071-e6ca70de-319c-4f6e-b8cc-47a17ff73066.png)
+
+After Shadow paging the output is shown below:
+
+![image](https://user-images.githubusercontent.com/23494069/165830124-0b368d88-c527-4f7c-8709-6500594fe978.png)
+
+
