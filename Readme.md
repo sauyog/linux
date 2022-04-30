@@ -262,7 +262,7 @@ What changed between the two runs (ept vs no-ept)?
 
 The exit counts differ between the two runs with ept and without ept. Due to the overhead associated with shadow paging, the exit count has been increased with no-ept.
 
-Output before boot is:
+Output before boot i.e with ept is:
 
 ![image](https://user-images.githubusercontent.com/23494069/165830071-e6ca70de-319c-4f6e-b8cc-47a17ff73066.png)
 
